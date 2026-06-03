@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<section class="w-full min-h-screen bg-[#fdfaf6] px-10 py-10">
+
+  <div class="max-w-7xl mx-auto border border-[#d8c7b5] rounded-3xl bg-white overflow-hidden">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 px-10 py-16">
+
+      <div>
+
+        <h1 class="text-5xl font-bold text-[#4b1e0f] leading-tight mb-4">
+          House Price Prediction System
+        </h1>
+
+        <h2 class="text-2xl text-[#e26a2c] font-semibold mb-8">
+          Predict house prices using Machine Learning
+        </h2>
+
+        <p class="text-[#3f3f3f] text-lg leading-9 max-w-xl mb-10">
+          This system uses the California Housing dataset
+          and Regression techniques to predict the price
+          of a house.
+        </p>
+
+        <div class="flex gap-5">
+
+          <a href="{{ url_for('predict_house') }}"
+            class="bg-[#e26a2c] hover:bg-[#cf5c22] text-white px-8 py-4 rounded-xl text-lg font-medium shadow-md transition duration-300 inline-block">
+            Try Prediction
+          </a>
+
+          <a href="{{ url_for('notebook') }}"
+            class="bg-[#748c55] hover:bg-[#627547] text-white px-8 py-4 rounded-xl text-lg font-medium shadow-md transition duration-300 inline-block">
+            View Notebook
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="flex justify-center">
+
+        <img src="{{ url_for('static', filename='Houses-bro.svg') }}"
+             alt="House Illustration"
+             class="w-[450px] object-contain">
+
+      </div>
+
+    </div>
+
+    <div class="border-t border-[#e5d9cc]"></div>
+
+
+    <div class="px-10 py-12">
+
+      <h2 class="text-3xl font-bold text-center text-[#4b1e0f] mb-10">
+        What You Can Explore
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="border border-[#e2c8ae] rounded-2xl p-6 bg-[#fffdfb] hover:shadow-lg transition">
+
+          <div class="w-14 h-14 rounded-full bg-[#fff1e8] flex items-center justify-center mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database-icon lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+          </div>
+
+          <h3 class="text-2xl font-semibold text-[#4b1e0f] mb-3">Dataset</h3>
+          <p class="text-[#555] leading-7">California Housing dataset overview</p>
+
+        </div>
+
+        <div class="border border-[#d6dfc8] rounded-2xl p-6 bg-[#fcfff8] hover:shadow-lg transition">
+
+          <div class="w-14 h-14 rounded-full bg-[#eef7df] flex items-center justify-center mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-[#4b1e0f]">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m21 21-4.35-4.35"/>
+              <circle cx="10.5" cy="10.5" r="6.5"/>
+            </svg>
+          </div>
+
+          <h3 class="text-2xl font-semibold text-[#4b1e0f] mb-3">
+            Exploratory Data Analysis
+          </h3>
+          <p class="text-[#555] leading-7">Visualizations and insights</p>
+
+        </div>
+
+        <div class="border border-[#f0d5bf] rounded-2xl p-6 bg-[#fffaf5] hover:shadow-lg transition">
+
+          <div class="w-14 h-14 rounded-full bg-[#fff1e8] flex items-center justify-center mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-[#4b1e0f]">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9.75 3a3 3 0 00-3 3v1.5a3 3 0 003 3M14.25 3a3 3 0 013 3v1.5a3 3 0 01-3 3"/>
+            </svg>
+          </div>
+
+          <h3 class="text-2xl font-semibold text-[#4b1e0f] mb-3">
+            Machine Learning Model
+          </h3>
+          <p class="text-[#555] leading-7">Train and evaluate regression model</p>
+
+        </div>
+
+        <div class="border border-[#f0c9b4] rounded-2xl p-6 bg-[#fffdfb] hover:shadow-lg transition">
+
+          <div class="w-14 h-14 rounded-full bg-[#fff1e8] flex items-center justify-center mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-[#4b1e0f]">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 3v18h18"/>
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M7 14l4-4 3 3 5-6"/>
+            </svg>
+          </div>
+
+          <h3 class="text-2xl font-semibold text-[#4b1e0f] mb-3">
+            Predict
+          </h3>
+          <p class="text-[#555] leading-7">
+            Input house details and get prediction
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+{% endblock %}

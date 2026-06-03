@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}Performance{% endblock %}
+
+{% block content %}
+<section class="w-full min-h-screen bg-[#fdfaf6] px-10 py-10">
+
+  <div class="max-w-7xl mx-auto border border-[#d8c7b5] rounded-3xl bg-white p-10">
+
+    <h1 class="text-4xl font-bold text-[#4b1e0f] mb-10">
+      Model Performance
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+
+      <div class="border border-[#f0d5bf] bg-[#fffaf5] rounded-2xl p-8 text-center shadow-sm">
+        <h3 class="text-xl text-[#555] mb-4">R² Score</h3>
+        <h1 class="text-5xl font-bold text-[#4b1e0f]">0.81</h1>
+      </div>
+
+      <div class="border border-[#d6dfc8] bg-[#fcfff8] rounded-2xl p-8 text-center shadow-sm">
+        <h3 class="text-xl text-[#555] mb-4">Mean Squared Error</h3>
+        <h1 class="text-5xl font-bold text-[#476b2f]">0.23</h1>
+      </div>
+
+      <div class="border border-[#f0d5bf] bg-[#fffdfb] rounded-2xl p-8 text-center shadow-sm">
+        <h3 class="text-xl text-[#555] mb-4">Dataset Size</h3>
+        <h1 class="text-5xl font-bold text-[#4b1e0f]">20,640</h1>
+        <p class="text-[#777] mt-2">records</p>
+      </div>
+
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+      <div class="lg:col-span-2 border border-[#d8c7b5] rounded-2xl p-8 bg-[#fffdfb]">
+
+        <h2 class="text-3xl font-bold text-[#4b1e0f] mb-6">
+          Actual vs Predicted Values
+        </h2>
+
+        <img
+          src="{{ url_for('static', filename='graph.png') }}"
+          alt="Performance Graph"
+          class="w-full rounded-xl border border-[#eee]"
+        >
+
+      </div>
+
+      <div class="border border-[#f0c9b4] rounded-2xl bg-[#fffaf5] p-8 flex flex-col justify-center">
+
+        <h2 class="text-3xl font-bold text-[#4b1e0f] mb-6">
+          Model Summary
+        </h2>
+
+        <p class="text-[#555] leading-9 text-lg">
+          The model explains
+          <span class="font-bold text-[#e26a2c]">81%</span>
+          of the variance in house prices.
+        </p>
+
+        <p class="text-[#555] leading-9 text-lg mt-5">
+          Predictions are reasonably close to actual values,
+          showing good performance for regression analysis.
+        </p>
+
+        <div class="mt-8 border border-[#f0d5bf] rounded-xl p-5 bg-white">
+
+          <div class="flex justify-between mb-4">
+            <span class="text-[#666]">Model Type</span>
+            <span class="font-semibold text-[#4b1e0f]">Random Forest Regressor</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-[#666]">Accuracy Level</span>
+            <span class="font-semibold text-[#476b2f]">High</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+{% endblock %}

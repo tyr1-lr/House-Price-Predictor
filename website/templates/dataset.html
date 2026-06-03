@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Dataset{% endblock %}
+
+{% block content %}
+
+<section class="w-full min-h-screen bg-[#fdfaf6] px-10 py-10">
+
+  <div class="max-w-7xl mx-auto bg-white border border-[#d8c7b5] rounded-3xl p-10">
+
+    <h1 class="text-4xl font-bold text-[#4b1e0f] mb-6">
+      California Housing Dataset
+    </h1>
+
+    <p class="text-[#666] mb-8">
+      Showing first 100 rows of the dataset used for training.
+    </p>
+
+    <div class="overflow-x-auto">
+      {{ table | safe }}
+    </div>
+
+  </div>
+
+</section>
+
+{% endblock %}
